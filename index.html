@@ -90,7 +90,7 @@
                         <a href="#strategies" data-target="strategies" class="nav-link text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium">Strategies</a>
                         <a href="#comparison" data-target="comparison" class="nav-link text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium">Comparison</a>
                         <a href="#deep-dive" data-target="deep-dive" class="nav-link text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium">Deep Dive</a>
-                        <button id="show-webinar-modal-nav" class="nav-link text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium">Webinar: Onshape+Arena</button>
+                        <!-- Webinar nav button removed -->
                         <a href="#recommendation" data-target="recommendation" class="nav-link text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium">Recommendation</a>
                     </div>
                 </div>
@@ -167,9 +167,9 @@
                         <li><span class="font-semibold">PLM:</span> Arena or Windchill</li>
                         <li><span class="font-semibold">ERP/MES:</span> Partner-based (e.g., NetSuite, Fishbowl)</li>
                     </ul>
-                    <a href="webinar_summary.html" target="_blank" class="text-cyan-600 hover:text-cyan-700 hover:underline text-sm font-medium mt-3 inline-block">
+                    <button id="show-webinar-modal-strategy" type="button" class="text-cyan-600 hover:text-cyan-700 hover:underline text-sm font-medium mt-3 inline-block">
                         See Webinar Summary &raquo;
-                    </a>
+                    </button>
                 </div>
                 <!-- Strategy 2: Dassault Systèmes -->
                 <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200 flex flex-col">
@@ -544,7 +544,9 @@
             });
 
             // --- Webinar Modal Logic ---
-            const showWebinarNavBtn = document.getElementById('show-webinar-modal-nav');
+            // Webinar modal openers
+            const showWebinarNavBtn = document.getElementById('show-webinar-modal-nav'); // (nav button, now removed)
+            const showWebinarStrategyBtn = document.getElementById('show-webinar-modal-strategy'); // (strategy card button)
             const closeWebinarBtn = document.getElementById('close-webinar-modal');
             const webinarModal = document.getElementById('webinar-modal');
 
@@ -558,7 +560,8 @@
                 webinarModal.classList.remove('flex');
             };
 
-            showWebinarNavBtn.addEventListener('click', openModal);
+            if (showWebinarNavBtn) showWebinarNavBtn.addEventListener('click', openModal);
+            if (showWebinarStrategyBtn) showWebinarStrategyBtn.addEventListener('click', openModal);
             closeWebinarBtn.addEventListener('click', closeModal);
 
             webinarModal.addEventListener('click', (e) => {
