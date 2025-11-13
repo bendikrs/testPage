@@ -10,17 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Chosen Palette: "Calm Harmony" (Warm Neutrals: bg-gray-50, bg-white. Complements: slate-700, slate-500. Accent: cyan-600) -->
-    <!-- Application Structure Plan: Single-page SPA with sticky nav scrolling to thematic sections. Structure: 1. Intro (Company Profile), 2. Core Needs Analysis (Interactive Diagram), 3. Candidate Strategies (Tabbed/Card view: Onshape/PTC, Dassault, Autodesk), 4. Interactive Comparison (Chart.js Radar Chart), 5. Deep Dive (Button-driven content swap for CAD/PDM/PLM/ERP), 6. Final Recommendations. This structure guides the user from their specific problem to integrated platform-based solutions, directly addressing their 'tightly connected' constraint and 'Onshape' query. The flow is logical: Problem -> Needs -> Solutions -> Comparison -> Details -> Verdict. -->
-    <!-- Visualization & Content Choices: 
-        - Report Info: Company Profile. Goal: Inform. Viz: Styled list. Interaction: None. Justification: Clear summary. Method: HTML/Tailwind.
-        - Report Info: Functional Areas (CAD...WMS). Goal: Organize/Relationships. Viz: HTML/CSS/Tailwind "Process Flow" Diagram (divs and arrows). Interaction: None. Justification: Visually shows how functions connect, reinforcing the "integration" problem. Method: HTML/Tailwind (flexbox/grid).
-        - Report Info: Solution Strategies (Onshape, DS, Autodesk). Goal: Inform/Compare. Viz: Side-by-side cards. Interaction: None. Justification: Allows focused review of each main ecosystem. Method: HTML/Tailwind.
-        - Report Info: Strategy Comparison (Integration, Vendor #, Tech, Fit). Goal: Compare. Viz: Radar Chart. Interaction: Chart.js tooltips on hover. Justification: Multi-axial comparison of 3 distinct options. Method: Chart.js (Canvas).
-        - Report Info: Deep Dive (Details for CAD, PDM, etc.). Goal: Inform/Drill-down. Viz: Dynamic text content area. Interaction: User clicks buttons (CAD, PDM, PLM...) to update the text content. Justification: Interactive "filtering" of information. Method: JS-driven innerHTML update.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -90,7 +79,6 @@
                         <a href="#strategies" data-target="strategies" class="nav-link text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium">Strategies</a>
                         <a href="#comparison" data-target="comparison" class="nav-link text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium">Comparison</a>
                         <a href="#deep-dive" data-target="deep-dive" class="nav-link text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium">Deep Dive</a>
-                        <!-- Webinar nav button removed -->
                         <a href="#recommendation" data-target="recommendation" class="nav-link text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium">Recommendation</a>
                     </div>
                 </div>
@@ -100,7 +88,6 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        <!-- Section 1: Summary -->
         <section id="summary" class="scroll-mt-20 mb-16">
             <h1 class="text-4xl font-bold text-slate-800 mb-4">Software Strategy Analysis</h1>
             <p class="text-lg text-slate-600 mb-8">
@@ -119,7 +106,6 @@
             </div>
         </section>
 
-        <!-- Section 2: Needs Analysis -->
         <section id="needs" class="scroll-mt-20 mb-16">
             <h2 class="text-3xl font-bold text-slate-800 mb-4">Analyzing Your Integrated Needs</h2>
             <p class="text-lg text-slate-600 mb-8">
@@ -148,14 +134,12 @@
             </div>
         </section>
 
-        <!-- Section 3: Solution Strategies -->
         <section id="strategies" class="scroll-mt-20 mb-16">
             <h2 class="text-3xl font-bold text-slate-800 mb-4">Candidate Ecosystems</h2>
             <p class="text-lg text-slate-600 mb-8">
-                Given the goal of minimizing vendors and custom integrations, the best approach is to evaluate entire <span class="font-semibold">ecosystems</span>. We've identified three primary strategies, including the cloud-native Onshape/PTC platform you inquired about, which contrast with the incumbent and other major players.
+                Given the goal of minimizing vendors and custom integrations, the best approach is to evaluate entire <span class="font-semibold">ecosystems</span>. We've identified four primary strategies, including the cloud-native Onshape/PTC platform you inquired about, which contrast with the incumbent and other major players.
             </p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Strategy 1: Onshape/PTC -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200 flex flex-col">
                     <h3 class="text-2xl font-semibold text-cyan-700 mb-3">Strategy 1: Onshape/PTC</h3>
                     <p class="text-slate-600 mb-4 flex-grow">
@@ -171,7 +155,6 @@
                         See Webinar Summary &raquo;
                     </button>
                 </div>
-                <!-- Strategy 2: Dassault Systèmes -->
                 <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200 flex flex-col">
                     <h3 class="text-2xl font-semibold text-slate-700 mb-3">Strategy 2: Dassault Systèmes</h3>
                     <p class="text-slate-600 mb-4 flex-grow">
@@ -184,7 +167,6 @@
                         <li><span class="font-semibold">ERP/MES:</span> DELMIAworks (Single-vendor)</li>
                     </ul>
                 </div>
-                <!-- Strategy 3: Autodesk -->
                 <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200 flex flex-col">
                     <h3 class="text-2xl font-semibold text-slate-700 mb-3">Strategy 3: Autodesk</h3>
                     <p class="text-slate-600 mb-4 flex-grow">
@@ -197,14 +179,25 @@
                         <li><span class="font-semibold">ERP/MES:</span> Prodsmart (MES) + ERP Partner</li>
                     </ul>
                 </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200 flex flex-col">
+                    <h3 class="text-2xl font-semibold text-slate-700 mb-3">Strategy 4: Siemens Xcelerator</h3>
+                    <p class="text-slate-600 mb-4 flex-grow">
+                        A "Best-in-Class PLM Hub" strategy. It positions <strong>Teamcenter (PLM)</strong> as the central backbone to integrate your existing SolidWorks with other best-in-class tools. Exceptionally strong at managing complex mechatronic (MCAD/ECAD) BOMs.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-slate-600">
+                        <li><span class="font-semibold">Type:</span> PLM-Centric Hub / Hybrid</li>
+                        <li><span class="font-semibold">Core:</span> Teamcenter (PLM/PDM)</li>
+                        <li><span class="font-semibold">PLM:</span> Teamcenter</li>
+                        <li><span class="font-semibold">ERP/MES:</span> Opcenter X (MES) + 3rd-Party ERP</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Section 4: Comparison -->
         <section id="comparison" class="scroll-mt-20 mb-16">
             <h2 class="text-3xl font-bold text-slate-800 mb-4">Ecosystem At-a-Glance</h2>
             <p class="text-lg text-slate-600 mb-8">
-                This radar chart compares the three strategies on key metrics relevant to your goals. 'Integration' refers to the out-of-the-box data flow. 'Single Vendor' reflects how much of the stack one company provides. 'Shop Floor Fit' assesses built-in CAM and MES tools.
+                This radar chart compares the strategies on key metrics relevant to your goals. 'Integration' refers to the out-of-the-box data flow. 'Single Vendor' reflects how much of the stack one company provides. 'Shop Floor Fit' assesses built-in CAM and MES tools.
             </p>
             <div class="bg-white p-6 rounded-lg shadow-lg border border-slate-200">
                 <div class="chart-container">
@@ -213,7 +206,6 @@
             </div>
         </section>
 
-        <!-- Section 5: Deep Dive -->
         <section id="deep-dive" class="scroll-mt-20 mb-16">
             <h2 class="text-3xl font-bold text-slate-800 mb-4">Functional Area Breakdown</h2>
             <p class="text-lg text-slate-600 mb-8">
@@ -226,13 +218,9 @@
                 <button id="btn-prod" data-target="prod" class="tab-btn bg-white hover:bg-cyan-100 text-cyan-700 font-medium py-2 px-4 rounded-lg border border-cyan-200">Production & Warehouse</button>
             </div>
             <div id="deepDiveContent" class="bg-white p-6 rounded-lg shadow-lg border border-slate-200 min-h-[300px]">
-                <!-- Content injected by JS -->
-            </div>
+                </div>
         </section>
 
-        <!-- Section 5b: Webinar Summary (This section is now removed from the main flow) -->
-
-        <!-- Section 6: Recommendation -->
         <section id="recommendation" class="scroll-mt-20 mb-16">
             <h2 class="text-3xl font-bold text-slate-800 mb-4">Summary & Recommendation</h2>
             <p class="text-lg text-slate-600 mb-6">
@@ -251,7 +239,7 @@
                 <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
                     <h3 class="text-xl font-semibold text-slate-700 mb-2">Dassault Systèmes Strategy (Incumbent)</h3>
                     <p class="text-slate-600">
-                        This is the most 'traditional' and lowest-risk path, building on your existing SolidWorks data and expertise. The key advantage is <span class="font-semibold">DELMIAworks</span>, which is a highly-regarded, fully-integrated ERP/MES designed for manufacturing companies. This would give you a true single-vendor solution from design through to shop floor execution. The potential downside is a less flexible, desktop-centric design environment.
+                        This is the most 'traditional' and lowest-risk path, building on your existing SolidWorks data and expertise. The key advantage is <span class="font-semibold">DELMIAworks</span>, which is a highly-regarded, fully-integrated ERP/MES designed for manufacturing companies. This would give you a true single-vendor solution from design through to shop floor execution. The potential downside is a less flexible, desktop-centric design environment and potential weakness in 3rd-party ECAD integration.
                     </p>
                 </div>
                  <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
@@ -260,12 +248,18 @@
                         This is a direct competitor to the Onshape strategy. Fusion 360's main advantage is its <span class="font-semibold">all-in-one design tool</span>, combining mechanical CAD, ECAD, and CAM. This is extremely powerful for a company with an in-house machine shop. Paired with Fusion 360 Manage (PLM) and Prodsmart (MES), it's a very compelling, tightly integrated ecosystem.
                     </p>
                 </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-700 mb-2">Siemens Xcelerator Strategy (PLM-Hub)</h3>
+                    <p class="text-slate-600">
+                        This is the "best-in-class" approach, positioning <strong>Teamcenter</strong> as the central data hub. Its primary, unrivaled strength is managing your complex mechatronic (SolidWorks + ECAD/PCB) Bill of Materials. It has a perfect-fit cloud MES (<strong>Opcenter X</strong>) and a strong, proven local partner network in Norway (e.g., CLEVR, Kongsberg Innovation). Its main trade-off is that it is explicitly multi-vendor, requiring a separate, integrated ERP.
+                    </p>
+                </div>
                 <div class="bg-cyan-50 border-l-4 border-cyan-600 p-6 rounded-r-lg">
                     <h3 class="text-xl font-semibold text-cyan-800 mb-2">Final Thought</h3>
                     <p class="text-cyan-700">
                         Your choice depends on your primary bottleneck.
                         <br>
-                        If your main challenge is <span class="font-semibold">design collaboration</span> (Mech/Elec/Soft) and agility, the cloud platforms (<span class="font-semibold">Onshape</span> or <span class="font-semibold">Autodesk</span>) are superior.
+                        If your main challenge is <span class="font-semibold">design collaboration</span> (Mech/Elec/Soft) and agility, the modern platforms (<span class="font-semibold">Onshape</span>, <span class="font-semibold">Autodesk</span>) or the PLM-hub model (<span class="font-semibold">Siemens</span>) are superior.
                         <br>
                         If your main challenge is a <span class="font-semibold">seamless design-to-manufacturing data flow</span> with a single source of truth for BOMs, inventory, and shop orders, the <span class="font-semibold">Dassault (SolidWorks + DELMIAworks)</span> path is the most direct, proven, single-vendor solution.
                     </p>
@@ -275,10 +269,8 @@
 
     </main>
 
-    <!-- Webinar Modal Page -->
     <div id="webinar-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 items-center justify-center p-4 sm:p-6 lg:p-12 hidden">
         <div id="webinar-modal-content" class="bg-gray-50 max-w-6xl w-full h-full max-h-[95vh] rounded-lg shadow-2xl overflow-y-auto relative flex flex-col">
-            <!-- Modal Header -->
             <div class="sticky top-0 bg-white border-b border-slate-200 p-4 sm:p-6 z-10">
                 <div class="flex justify-between items-center">
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-800">Webinar Spotlight: The Onshape-Arena Connection</h2>
@@ -288,7 +280,6 @@
                 </div>
             </div>
             
-            <!-- Modal Body (Scrollable) -->
             <div class="p-4 sm:p-6 lg:p-8 flex-grow">
                 <p class="text-lg text-slate-600 mb-8">
                     Your request for a "tightly connected" platform directly relates to this summary of a recent session on the Onshape (CAD/PDM) and Arena (PLM) integration. The core concept is creating a single, cloud-native source of truth to connect design, operations, and suppliers, eliminating version confusion and manual data entry.
@@ -316,7 +307,6 @@
 
                 <h3 class="text-2xl font-semibold text-slate-800 mb-6">Key Features & Workflow Highlights</h3>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Left Column: Workflow -->
                     <div class="space-y-6">
                         <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
                             <h4 class="text-xl font-semibold text-slate-700 mb-3">Formal Release Process</h4>
@@ -334,7 +324,6 @@
                         </div>
                     </div>
 
-                    <!-- Right Column: Features -->
                     <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
                         <h4 class="text-xl font-semibold text-slate-700 mb-4">Key PLM Features in Arena</h4>
                         <ul class="list-disc list-inside space-y-3 text-slate-600">
@@ -395,6 +384,16 @@
                             pointBorderColor: '#fff',
                             pointHoverBackgroundColor: '#fff',
                             pointHoverBorderColor: 'rgba(71, 85, 105, 1)'
+                        },
+                        {
+                            label: 'Siemens Xcelerator',
+                            data: [9, 4, 8, 10, 9, 9],
+                            backgroundColor: 'rgba(13, 148, 136, 0.2)', // teal-600
+                            borderColor: 'rgba(13, 148, 136, 1)',
+                            pointBackgroundColor: 'rgba(13, 148, 136, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(13, 148, 136, 1)'
                         },
                          {
                             label: 'Autodesk',
@@ -472,6 +471,7 @@
                         <p><strong>Onshape/PTC:</strong> Uses <strong>Onshape</strong>, a pure-cloud CAD platform. Excellent for collaboration and accessible anywhere. For ECAD, it relies on partner integrations like Altium, or its own native ECAD capabilities are evolving.</p>
                         <p><strong>Dassault Systèmes:</strong> Uses <strong>SolidWorks</strong> (desktop) for mechanical and <strong>SolidWorks Electrical/PCB</strong> for ECAD. This is a mature, powerful, and well-integrated solution, though desktop-based.</p>
                         <p><strong>Autodesk:</strong> Uses <strong>Fusion 360</strong>, which uniquely combines mechanical CAD, ECAD (from Eagle), and CAM in a single application. This is a huge advantage for integrated design and prototyping.</p>
+                        <p><strong>Siemens Xcelerator:</strong> Retains <strong>SolidWorks</strong>. Teamcenter provides a deep, out-of-the-box integration that embeds PLM functions directly inside the SolidWorks UI. It's designed to manage multi-CAD environments.</p>
                     </div>
                 `,
                 pdm: `
@@ -480,6 +480,7 @@
                         <p><strong>Onshape/PTC:</strong> PDM is built directly into <strong>Onshape</strong> (versioning, branching, merging). For full PLM (BOM management, change orders, quality), it integrates with <strong>Arena (PLM)</strong>, a cloud-native platform.</p>
                         <p><strong>Dassault Systèmes:</strong> You already use <strong>SolidWorks PDM</strong>. This can be extended to <strong>ENOVIA</strong> for enterprise-level PLM, creating a single, powerful data backbone from the DS ecosystem.</p>
                         <p><strong>Autodesk:</strong> PDM is built into <strong>Fusion 360</strong>. This is extended by <strong>Fusion 360 Manage</strong> for full PLM capabilities (BOM, change, quality, supplier collaboration).</p>
+                        <p><strong>Siemens Xcelerator:</strong> Replaces SW PDM with <strong>Teamcenter</strong>, a market-leading PLM. This is its core strength. It is purpose-built to manage complex mechatronic (MCAD/ECAD/Software) BOMs, creating a single source of truth.</p>
                     </div>
                 `,
                 erp: `
@@ -488,6 +489,7 @@
                         <p><strong>Onshape/PTC:</strong> This is the biggest "partner" area. Onshape/Arena integrate with various cloud ERPs (e.g., <strong>NetSuite, Fishbowl, Odoo</strong>) via APIs. This requires integration, but offers flexibility.</p>
                         <p><strong>Dassault Systèmes:</strong> This is a key strength. <strong>DELMIAworks (IQMS)</strong> is a complete, single-vendor ERP/MES solution built specifically for manufacturing. It integrates seamlessly with SolidWorks for a true design-to-BOM-to-ERP flow.</p>
                         <p><strong>Autodesk:</strong> Similar to PTC, Autodesk relies on partners for full ERP. <strong>NetSuite</strong> is a very common and tightly integrated partner for Fusion 360 Manage.</p>
+                        <p><strong>Siemens Xcelerator:</strong> This is a "bring your own ERP" model. Siemens does not offer a native financial ERP. It relies on robust, "productized gateways" (like Active Integration) to connect Teamcenter to any major ERP (e.g., SAP, Oracle, or local options).</p>
                     </div>
                 `,
                 prod: `
@@ -496,6 +498,7 @@
                         <p><strong>Onshape/PTC:</strong> Relies on partners for MES and CAM. Many CAM partners integrate directly. MES/WMS would typically be part of the chosen partner ERP (like Fishbowl or NetSuite's WMS).</p>
                         <p><strong>Dassault Systèmes:</strong> <strong>DELMIAworks</strong> is a combined ERP and MES. It provides real-time shop floor monitoring, scheduling, and WMS, all in one system connected to your SolidWorks data.</p>
                         <p><strong>Autodesk:</strong> <strong>Fusion 360</strong> has incredibly powerful and integrated CAM. This is a major plus for your machine shop. For MES/scheduling, they offer <strong>Prodsmart</strong>, which connects to Fusion 360 Manage.</p>
+                        <p><strong>Siemens Xcelerator:</strong> Uses <strong>Opcenter X</strong>, a cloud-based MES/MOM solution. It is a "perfect fit" for HMLV/Job Shop manufacturing, providing agile scheduling, real-time job tracking, and WMS.</p>
                     </div>
                 `
             };
